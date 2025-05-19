@@ -55,7 +55,7 @@ class Receita:
         self.medicamento = medicamento
         self.doenca = doenca
         self.observacao = observacao
-        self.data_emissao = datetime.now()  # Aqui usamos datetime.now()
+        self.data_emissao = datetime.now()  #Aqui usamos datetime.now()
         self.autorizada = False
 
     def gerar_receita(self):
