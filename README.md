@@ -65,6 +65,9 @@ Senha: A senha para o paciente é "paciente", e para o funcionário é "senha123
 Após inserir as credenciais corretas, o sistema abrirá a interface correspondente (paciente ou funcionário).
 
 3. Menu do Paciente
+
+                    ((( De agora em diante usamos apenas 1 número singular de 0 a 9 para algumas opções como CPF e Número do SUS )))
+
 Após um paciente logar com sucesso, a interface será direcionada para o menu de paciente, onde ele poderá:
 
 Registrar Paciente: O paciente poderá se registrar no sistema inserindo seu nome, CPF e número do SUS.
