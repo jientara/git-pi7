@@ -66,7 +66,7 @@ Após inserir as credenciais corretas, o sistema abrirá a interface corresponde
 
 3. Menu do Paciente
 
-                    ((( De agora em diante usamos apenas 1 número singular de 0 a 9 para algumas opções como CPF e Número do SUS )))
+   ((( De agora em diante usamos apenas 1 número singular de 0 a 9 para algumas opções como CPF e Número do SUS )))
 
 Após um paciente logar com sucesso, a interface será direcionada para o menu de paciente, onde ele poderá:
 
