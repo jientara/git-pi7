@@ -14,40 +14,26 @@ Como Configurar
 1. Instalar o Python
 Certifique-se de que o Python está instalado na sua máquina. Você pode verificar se o Python está instalado executando o seguinte comando no terminal:
 
-bash
-Copiar
-Editar
 python --version
 2. Instalar as Dependências
 Se o seu projeto tiver dependências, instale-as utilizando o pip. Para isso, basta executar o seguinte comando:
 
-bash
-Copiar
-Editar
 pip install -r requirements.txt
 Se não houver o arquivo requirements.txt, o único pré-requisito é o Tkinter, que é geralmente pré-instalado no Python.
 
 3. Baixar ou Clonar o Repositório
 Clone ou baixe os arquivos do projeto para a sua máquina:
 
-bash
-Copiar
-Editar
 git clone https://github.com/seu_usuario/seu_repositorio.git
 4. Navegar até o Diretório do Projeto
 Use o terminal para acessar o diretório onde os arquivos do projeto foram baixados:
 
-bash
-Copiar
-Editar
 cd nome_do_projeto
+
 Como Usar
 1. Executar o Sistema
 Para iniciar o sistema, execute o arquivo app.py:
 
-bash
-Copiar
-Editar
 python app.py
 Ao rodar o script, uma janela de login será exibida. O sistema suporta dois tipos de usuários:
 
