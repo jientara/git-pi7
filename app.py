@@ -117,13 +117,16 @@ def autenticar_usuario():
 
         if usuario == "funcionario" and senha == "senha123":
             menu_funcionario()
-            login_window.quit()
+            login_window.destroy()
         elif usuario == "paciente" and senha == "paciente":
             menu_paciente()
-            login_window.quit()
+            login_window.destroy()
         else:
             messagebox.showerror("Erro", "Credenciais inválidas.")
 
+    login_window = tk.Tk()
+    login_window.title("Login")
+    
     # Criando a janela de login
     login_window = tk.Tk()
     login_window.title("Login")
