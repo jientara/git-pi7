@@ -2,6 +2,14 @@ import tkinter as tk
 from tkinter import messagebox
 import sistema
 
+def centralizar_janela(janela, largura=300, altura=150):
+    janela.update_idletasks()
+    largura_tela = janela.winfo_screenwidth()
+    altura_tela = janela.winfo_screenheight()
+    x = (largura_tela // 2) - (largura // 2)
+    y = (altura_tela // 2) - (altura // 2)
+    janela.geometry(f"{largura}x{altura}+{x}+{y}")
+
 # Função para exibir o menu de funcionário
 def menu_funcionario():
     def cadastrar_paciente():
@@ -114,29 +122,29 @@ def autenticar_usuario():
     def verificar_usuario():
         usuario = usuario_entry.get()
         senha = senha_entry.get()
-
         if usuario == "funcionario" and senha == "senha123":
+            login_window.destroy()
             menu_funcionario()
-            login_window.destroy()
         elif usuario == "paciente" and senha == "paciente":
-            menu_paciente()
             login_window.destroy()
+            menu_paciente()
         else:
             messagebox.showerror("Erro", "Credenciais inválidas.")
 
-    # Criando a janela de login
     login_window = tk.Tk()
     login_window.title("Login")
+    centralizar_janela(login_window, 320, 180)
+    # login_window.iconbitmap('icone.ico')  # Descomente se tiver um ícone
 
-    tk.Label(login_window, text="Usuário").grid(row=0, column=0)
+    tk.Label(login_window, text="Usuário").grid(row=0, column=0, padx=10, pady=5)
     usuario_entry = tk.Entry(login_window)
-    usuario_entry.grid(row=0, column=1)
+    usuario_entry.grid(row=0, column=1, padx=10, pady=5)
 
-    tk.Label(login_window, text="Senha").grid(row=1, column=0)
+    tk.Label(login_window, text="Senha").grid(row=1, column=0, padx=10, pady=5)
     senha_entry = tk.Entry(login_window, show="*")
-    senha_entry.grid(row=1, column=1)
+    senha_entry.grid(row=1, column=1, padx=10, pady=5)
 
-    tk.Button(login_window, text="Entrar", command=verificar_usuario).grid(row=2, column=0, columnspan=2)
+    tk.Button(login_window, text="Entrar", command=verificar_usuario, width=20, height=2).grid(row=2, column=0, columnspan=2, pady=10)
 
     login_window.mainloop()
 
