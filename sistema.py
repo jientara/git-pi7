@@ -26,10 +26,8 @@ def autenticar_usuario():
     senha = input("Senha: ")
 
     # Credenciais do funcionário (exemplo fixo)
-    import os
     funcionarios = {
-        "funcionario": os.getenv("FUNCIONARIO_USER", "funcionario"),
-        "senha": os.getenv("FUNCIONARIO_PASS", "senha123")
+        "funcionario": "senha123"
     }
 
     # Verifica se o usuário é um funcionário
@@ -38,12 +36,12 @@ def autenticar_usuario():
         return "funcionario"
     
     # Verifica se o usuário é um paciente
-    pacientes_auth = {
+    pacientes = {
         "1": "Rua Getúlio Vargas, 57 - Centro",
         "2": "Rua Vidal Ramos, 829 - Centro"
     }
 
-    if usuario in pacientes_auth and senha == "paciente":  # senha simples para pacientes
+    if usuario in pacientes and senha == "paciente":  # senha simples para pacientes
         print(f"Bem-vindo, paciente {usuario}!")
         return "paciente"
 
