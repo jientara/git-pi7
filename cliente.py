@@ -76,9 +76,21 @@ class SUS:
 
     @staticmethod
     def obter_endereco(sus_num):
-        return SUS.enderecos_pacientes.get(sus_num)
+        """Retorna o endereço do paciente pelo número SUS, ou None se não encontrado."""
+        endereco = SUS.enderecos_pacientes.get(sus_num)
+        if not endereco:
+            print(f"Endereço não encontrado para SUS: {sus_num}")
+        return endereco
 
     @staticmethod
     def verificar_entrega(paciente, farmacias):
-        farmacia_mais_proxima = min(farmacias, key=lambda f: paciente.endereco.calcular_distancia(f.endereco))
-        return f"A farmácia mais próxima para o paciente {paciente.nome} é {farmacia_mais_proxima.nome}, localizada em {farmacia_mais_proxima.endereco.logradouro}."
+        """Retorna a farmácia mais próxima do paciente."""
+        if not farmacias:
+            return "Nenhuma farmácia cadastrada."
+        farmacia_mais_proxima = min(
+            farmacias, key=lambda f: paciente.endereco.calcular_distancia(f.endereco)
+        )
+        return (
+            f"A farmácia mais próxima para o paciente {paciente.nome} é {farmacia_mais_proxima.nome}, "
+            f"localizada em {farmacia_mais_proxima.endereco.logradouro}."
+        )

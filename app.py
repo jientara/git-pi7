@@ -124,9 +124,6 @@ def autenticar_usuario():
         else:
             messagebox.showerror("Erro", "Credenciais inválidas.")
 
-    login_window = tk.Tk()
-    login_window.title("Login")
-    
     # Criando a janela de login
     login_window = tk.Tk()
     login_window.title("Login")
