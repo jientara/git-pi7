@@ -24,7 +24,7 @@ Se não houver o arquivo requirements.txt, o único pré-requisito é o Tkinter,
 3. Baixar ou Clonar o Repositório
 Clone ou baixe os arquivos do projeto para a sua máquina:
 
-git clone https://github.com/seu_usuario/seu_repositorio.git
+git clone https://github.com/jientara/git-pi7.git
 4. Navegar até o Diretório do Projeto
 Use o terminal para acessar o diretório onde os arquivos do projeto foram baixados:
 
