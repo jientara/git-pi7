@@ -1,4 +1,5 @@
 # sistema.py
+
 from cliente import Paciente, Medico, Farmacia, Receita, SUS, Endereco
 from datetime import datetime
 
@@ -16,6 +17,36 @@ farmacias = [
     Farmacia("Farmácia Santa Helena", Endereco("Rua Reinoldo Hübner, 107 - Piedade")),
     Farmacia("Farmácia Jardim", Endereco("Rua Roberto Ehlke, 688 - Jardim Esperança")),
 ]
+
+# Funções do sistema
+
+def autenticar_usuario():
+    print("=== LOGIN ===")
+    usuario = input("Usuário (ex: funcionario): ")
+    senha = input("Senha: ")
+
+    # Credenciais do funcionário (exemplo fixo)
+    funcionarios = {
+        "funcionario": "senha123"
+    }
+
+    # Verifica se o usuário é um funcionário
+    if funcionarios.get(usuario) == senha:
+        print(f"Bem-vindo, {usuario}!")
+        return "funcionario"
+    
+    # Verifica se o usuário é um paciente
+    pacientes = {
+        "1": "Rua Getúlio Vargas, 57 - Centro",
+        "2": "Rua Vidal Ramos, 829 - Centro"
+    }
+
+    if usuario in pacientes and senha == "paciente":  # senha simples para pacientes
+        print(f"Bem-vindo, paciente {usuario}!")
+        return "paciente"
+
+    print("Credenciais inválidas!")
+    return None
 
 def cadastrar_paciente():
     nome = input("Nome do paciente: ")
@@ -52,30 +83,3 @@ def registrar_consulta():
 
     print("\n" + receita.gerar_receita())
     print(SUS.verificar_entrega(paciente, farmacias))
-
-def menu():
-    while True:
-        print("=== MENU SUS ===")
-        print("1 - Cadastrar paciente")
-        print("2 - Listar pacientes")
-        print("3 - Registrar consulta")
-        print("4 - Sair")
-        try:
-            opcao = input("Escolha uma opção: ")
-        except EOFError:
-            break
-
-        if opcao == "1":
-            cadastrar_paciente()
-        elif opcao == "2":
-            listar_pacientes()
-        elif opcao == "3":
-            registrar_consulta()
-        elif opcao == "4":
-            print("Encerrando o programa...")
-            break
-        else:
-            print("Opção inválida.\n")
-
-if __name__ == "__main__":
-    menu()
