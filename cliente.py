@@ -76,7 +76,7 @@ class SUS:
 
     @staticmethod
     def obter_endereco(sus_num):
-        return SUS.enderecos_pacientes.get(sus_num)
+        return SUS.enderecos_pacientes.get(sus_num, Endereco("Endereço não encontrado"))
 
     @staticmethod
     def verificar_entrega(paciente, farmacias):

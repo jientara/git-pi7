@@ -16,17 +16,13 @@ Certifique-se de que o Python está instalado na sua máquina. Você pode verifi
 
 python --version
 
-2. Instalar as Dependências
-Se o seu projeto tiver dependências, instale-as utilizando o pip. Para isso, basta executar o seguinte comando:
 
-pip install -r requirements.txt
-Se não houver o arquivo requirements.txt, o único pré-requisito é o Tkinter, que é geralmente pré-instalado no Python.
-
-3. Baixar ou Clonar o Repositório
+2. Baixar ou Clonar o Repositório
 Clone ou baixe os arquivos do projeto para a sua máquina:
 
 git clone https://github.com/jientara/git-pi7.git
-4. Navegar até o Diretório do Projeto
+
+3. Navegar até o Diretório do Projeto
 Use o terminal para acessar o diretório onde os arquivos do projeto foram baixados:
 
 cd nome_do_projeto
